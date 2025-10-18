@@ -1,0 +1,25 @@
+{
+  "name": "hledger-rules-syntax",
+  "displayName": "hledger-rules-syntax",
+  "description": "syntax-highlting for hledger CSV-parsing rules",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "hledger-rules",
+      "aliases": ["hledger rules", "hledger-rules"],
+      "extensions": [".rules"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "hledger-rules",
+      "scopeName": "source.rules",
+      "path": "./syntaxes/hledger-rules.tmLanguage.json"
+    }]
+  }
+}
