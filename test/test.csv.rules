@@ -141,29 +141,59 @@ balance9 %balance9
 if GROCERIES
   account2 expenses:groceries
 
+# NOT operator
+if ! GASOLINE
+  account2 expenses:other
+
+# AND operator
+if FUEL && GASOLINE
+  account2 expenses:gas
+
+# AND NOT operator
+if TRANSFER && ! EXTERNAL
+  account2 assets:savings
+  account1 assets:checking
+
+# Multi-line
+if 
+DEBIT
+ATM
+^(PURCHASE|SALE)
+  account2 expenses:misc
+
 # Field reference matching
 if %description AMAZON
   account2 expenses:online
 
-# AND operator
+# NOT operator with field reference
+if ! %description ATM
+  account2 expenses:cash
+
+# AND operator with field references
 if %description COFFEE && %amount -[0-9]+\.[0-9]{2}
   account2 expenses:coffee
   comment Negative amount detected
 
-# AND NOT operator
+# AND NOT operator with field references
 if %description TRANSFER && ! %description EXTERNAL
   account2 assets:savings
   account1 assets:checking
 
-# Multiple conditions
+# Multiple conditions with mixed patterns
 if %type DEBIT && ! %code ATM && %description ^(PURCHASE|SALE)
   account2 expenses:misc
   comment %date
 
-# Pattern with special regex
+# Pattern with special regex characters
 if %description (RENT|MORTGAGE).*[0-9]+
   account2 expenses:housing
   amount \1
+
+# Multi-line with field refs and patterns
+if
+%description PAYMENT
+& !%description DIVIDEND
+  account2 income:salary
 
 
 # ============================================

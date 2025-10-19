@@ -172,15 +172,28 @@
 					}
 				},
 				{
-					"match": "\\s*(!)?\\s*(%)(\\w[\\w-]*)",
+					"match": "^(&)",
+					"captures": {
+						"1": {
+							"name": "keyword.operator.logical.or.hledger-rules"
+						}
+					}
+				},
+				{
+					"match": "\\s*(!)\\s*(?=\\S)",
 					"captures": {
 						"1": {
 							"name": "keyword.operator.logical.not.hledger-rules"
-						},
-						"2": {
+						}
+					}
+				},
+				{
+					"match": "(%)(\\w[\\w-]*)",
+					"captures": {
+						"1": {
 							"name": "punctuation.definition.template-expression.begin.hledger-rules"
 						},
-						"3": {
+						"2": {
 							"patterns": [
 								{
 									"include": "#reference"

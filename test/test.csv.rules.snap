@@ -487,6 +487,76 @@
 #          ^ source.hledger-rules meta.assignment.field.hledger-rules
 #           ^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
 >
+># NOT operator
+#^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if ! GASOLINE
+#^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#   ^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.not.hledger-rules
+#    ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#     ^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>  account2 expenses:other
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>
+># AND operator
+#^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if FUEL && GASOLINE
+#^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#   ^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+#       ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#        ^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.and.hledger-rules
+#          ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#           ^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>  account2 expenses:gas
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>
+># AND NOT operator
+#^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if TRANSFER && ! EXTERNAL
+#^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#   ^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+#           ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#            ^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.and.hledger-rules
+#              ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#               ^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.not.hledger-rules
+#                ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                 ^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>  account2 assets:savings
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>  account1 assets:checking
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>
+># Multi-line
+#^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if 
+#^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^^ source.hledger-rules meta.conditional.if-block.hledger-rules
+>DEBIT
+#^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>ATM
+#^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>^(PURCHASE|SALE)
+#^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>  account2 expenses:misc
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>
 ># Field reference matching
 #^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
 >if %description AMAZON
@@ -502,8 +572,25 @@
 #          ^ source.hledger-rules meta.assignment.field.hledger-rules
 #           ^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
 >
-># AND operator
-#^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># NOT operator with field reference
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if ! %description ATM
+#^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#   ^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.not.hledger-rules
+#    ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#     ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#      ^^^^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                 ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                  ^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>  account2 expenses:cash
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>
+># AND operator with field references
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
 >if %description COFFEE && %amount -[0-9]+\.[0-9]{2}
 #^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
 #  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
@@ -529,8 +616,8 @@
 #         ^ source.hledger-rules meta.assignment.field.hledger-rules
 #          ^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
 >
-># AND NOT operator
-#^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># AND NOT operator with field references
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
 >if %description TRANSFER && ! %description EXTERNAL
 #^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
 #  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
@@ -558,8 +645,8 @@
 #          ^ source.hledger-rules meta.assignment.field.hledger-rules
 #           ^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
 >
-># Multiple conditions
-#^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># Multiple conditions with mixed patterns
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
 >if %type DEBIT && ! %code ATM && %description ^(PURCHASE|SALE)
 #^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
 #  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
@@ -595,8 +682,8 @@
 #          ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
 #           ^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
 >
-># Pattern with special regex
-#^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># Pattern with special regex characters
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
 >if %description (RENT|MORTGAGE).*[0-9]+
 #^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
 #  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
@@ -614,6 +701,29 @@
 #  ^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
 #        ^ source.hledger-rules meta.assignment.field.hledger-rules
 #         ^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.matchgroup.hledger-rules
+>
+># Multi-line with field refs and patterns
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if
+#^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
+>%description PAYMENT
+#^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+# ^^^^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.language.field-reference.custom.hledger-rules
+#            ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#             ^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>& !%description DIVIDEND
+#^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.or.hledger-rules
+# ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#  ^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.not.hledger-rules
+#   ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#    ^^^^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.language.field-reference.custom.hledger-rules
+#               ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                ^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>  account2 income:salary
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
 >
 >
 ># ============================================
