@@ -2,6 +2,7 @@
   "name": "hledger-rules",
   "displayName": "hledger rules",
   "description": "language support for hledger CSV-parsing rules",
+  "publisher": "EthanOlpin",
   "repository": {
     "type": "git",
     "url": "https://github.com/EthanOlpin/hledger-rules-vscode"
