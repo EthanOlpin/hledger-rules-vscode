@@ -1,0 +1,266 @@
+# ============================================
+# COMMENTS - all three comment styles
+# ============================================
+# This is a hash comment
+; This is a semicolon comment
+
+# ============================================
+# FLAG DIRECTIVES (no arguments)
+# ============================================
+newest-first
+intra-day-reversed
+archive
+end
+
+# ============================================
+# SIMPLE VALUE DIRECTIVES
+# ============================================
+include other.rules
+include /path/to/another.rules
+encoding utf-8
+encoding iso-8859-1
+timezone America/New_York
+timezone UTC
+date-format %Y-%m-%d
+date-format %d/%m/%Y
+
+
+# ============================================
+# SKIP DIRECTIVE
+# ============================================
+skip
+skip 1
+skip 10
+skip 999
+
+
+# ============================================
+# SEPARATOR DIRECTIVE (case-insensitive)
+# ============================================
+separator ,
+separator |
+separator tab
+separator space
+Separator ,
+SEPARATOR |
+
+
+# ============================================
+# DECIMAL-MARK DIRECTIVE
+# ============================================
+decimal-mark .
+decimal-mark ,
+
+
+# ============================================
+# BALANCE-TYPE DIRECTIVE
+# ============================================
+balance-type =
+balance-type ==
+balance-type =*
+balance-type ==*
+
+
+# ============================================
+# FIELDS DIRECTIVE
+# ============================================
+fields date, description, amount
+fields date,description,amount
+fields date, date2, status, code, description, comment, account1, account2
+fields date, amount-in, amount-out, currency
+fields date1, date2, balance, balance1, balance2
+fields date, custom-field, another_field, field3
+
+
+# ============================================
+# SOURCE DIRECTIVE
+# ============================================
+source data.csv
+source /absolute/path/to/data.csv
+source relative/path/*.csv
+source data*.csv
+source *.csv | sed 's/\r//g'
+source file.csv | grep -v '^#' | cut -d',' -f1-5
+
+
+# ============================================
+# FIELD ASSIGNMENT DIRECTIVES
+# ============================================
+
+# Date fields
+date %1
+date2 %date
+
+# Status and code
+status *
+status %2
+code %3
+
+# Description and comments
+description %description
+description %4 %5
+comment %date - %description
+comment1 First comment
+comment2 Second comment: %amount
+comment9 Ninth comment
+
+# Accounts
+account1 assets:bank:checking
+account1 assets:%type
+account2 expenses:unknown
+account2 expenses:%category
+account10 liabilities:credit-card
+
+# Amounts with match groups
+amount %amount
+amount -%amount
+amount USD %5
+amount-in %6
+amount-out %7
+amount1 %amount
+amount2 %amount2
+amount9 %9
+
+# Currency
+currency USD
+currency %currency
+currency1 %3
+currency2 EUR
+
+# Balance
+balance %balance
+balance1 %10
+balance2 %11
+balance9 %balance9
+
+# ============================================
+# IF BLOCKS with various matcher patterns
+# ============================================
+
+# Simple pattern matching
+if GROCERIES
+  account2 expenses:groceries
+
+# Field reference matching
+if %description AMAZON
+  account2 expenses:online
+
+# AND operator
+if %description COFFEE && %amount -[0-9]+\.[0-9]{2}
+  account2 expenses:coffee
+  comment Negative amount detected
+
+# AND NOT operator
+if %description TRANSFER && ! %description EXTERNAL
+  account2 assets:savings
+  account1 assets:checking
+
+# Multiple conditions
+if %type DEBIT && ! %code ATM && %description ^(PURCHASE|SALE)
+  account2 expenses:misc
+  comment %date
+
+# Pattern with special regex
+if %description (RENT|MORTGAGE).*[0-9]+
+  account2 expenses:housing
+  amount \1
+
+
+# ============================================
+# IF TABLES - Comma separated
+# ============================================
+if,account2,comment
+GROCERIES.*,expenses:groceries,Food shopping
+AMAZON.*,expenses:online,Online purchase
+COFFEE|CAFE,expenses:coffee,Coffee expense
+^ATM.*,expenses:cash,ATM withdrawal
+# Comment in table
+SALARY,income:salary,Monthly salary
+; Another comment in table
+
+
+# ============================================
+# IF TABLES - Pipe separated
+# ============================================
+if|account2|comment|amount-out
+RENT.*|expenses:housing|Monthly rent|%amount
+ELECTRIC.*|expenses:utilities|Electricity||%amount
+GAS.*|expenses:utilities|Gas bill|%amount
+WATER.*|expenses:utilities|Water bill|%amount
+* Comment in pipe table
+INSURANCE|expenses:insurance|Insurance premium|%amount
+
+
+# ============================================
+# IF TABLES - Forward slash separated
+# ============================================
+if/account2/description/amount
+PAYCHECK.*/income:salary/Salary payment/-%amount
+DIVIDEND.*/income:investments/Dividend income/-%amount
+INTEREST.*/income:interest/Interest earned/-%amount
+; Comment in slash table
+REFUND.*/income:refunds/Refund received/-%amount
+
+
+# ============================================
+# TEMPLATE STRINGS with various substitutions
+# ============================================
+
+# Match group references
+description Transaction: \1 from \2
+comment Date: %date Amount: %amount Code: %code
+
+# Field references with different naming styles
+account1 assets:%type:%subtype
+account2 expenses:%category:%subcategory
+comment %custom-field and %another_field
+
+# Mixed references
+description \1 - %description (\2)
+account2 expenses:%category:\1
+
+# Built-in field references
+comment date=%date date2=%date2 status=%status code=%code
+description desc=%description account1=%account1 account2=%account2
+amount %amount-in or %amount-out in %currency
+
+
+# ============================================
+# COMPLEX SCENARIOS
+# ============================================
+
+# Nested conditions with multiple field refs
+if %type DEBIT && %description TRANSFER && ! %code EXTERNAL
+  account1 assets:checking
+  account2 assets:savings
+  description Internal transfer on %date
+  comment From %account1 to %account2
+
+# Table with template strings
+if,account2,description,comment
+%merchant STORE.*,expenses:%category,Purchase at %merchant,Spent %amount on %date
+%vendor SERVICE,expenses:services,%vendor service,Service fee: %amount
+
+
+# ============================================
+# EDGE CASES
+# ============================================
+
+# Empty lines in if block
+if PATTERN
+
+  account2 expenses:test
+
+# Multiple ANDs
+if %1 A && %2 B && %3 C
+  account2 test
+
+# Field names with numbers
+account9 test
+amount99 %amount
+balance999 %balance
+comment99 test
+
+# Custom field names in various positions
+fields custom_field_1, another-field-2, field3
+description %custom_field_1 %another-field-2 %field3

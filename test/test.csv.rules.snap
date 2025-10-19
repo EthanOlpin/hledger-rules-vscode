@@ -1,0 +1,1110 @@
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># COMMENTS - all three comment styles
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># This is a hash comment
+#^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>; This is a semicolon comment
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># FLAG DIRECTIVES (no arguments)
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>newest-first
+#^^^^^^^^^^^^ source.hledger-rules keyword.control.hledger-rules
+>intra-day-reversed
+#^^^^^^^^^^^^^^^^^^ source.hledger-rules keyword.control.hledger-rules
+>archive
+#^^^^^^^ source.hledger-rules keyword.control.hledger-rules
+>end
+#^^^ source.hledger-rules keyword.control.hledger-rules
+>
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># SIMPLE VALUE DIRECTIVES
+#^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>include other.rules
+#^^^^^^^ source.hledger-rules meta.directive.hledger-rules keyword.control.directive.hledger-rules
+#       ^ source.hledger-rules meta.directive.hledger-rules
+#        ^^^^^^^^^^^ source.hledger-rules meta.directive.hledger-rules string.unquoted.value.hledger-rules
+>include /path/to/another.rules
+#^^^^^^^ source.hledger-rules meta.directive.hledger-rules keyword.control.directive.hledger-rules
+#       ^ source.hledger-rules meta.directive.hledger-rules
+#        ^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.directive.hledger-rules string.unquoted.value.hledger-rules
+>encoding utf-8
+#^^^^^^^^ source.hledger-rules meta.directive.hledger-rules keyword.control.directive.hledger-rules
+#        ^ source.hledger-rules meta.directive.hledger-rules
+#         ^^^^^ source.hledger-rules meta.directive.hledger-rules string.unquoted.value.hledger-rules
+>encoding iso-8859-1
+#^^^^^^^^ source.hledger-rules meta.directive.hledger-rules keyword.control.directive.hledger-rules
+#        ^ source.hledger-rules meta.directive.hledger-rules
+#         ^^^^^^^^^^ source.hledger-rules meta.directive.hledger-rules string.unquoted.value.hledger-rules
+>timezone America/New_York
+#^^^^^^^^ source.hledger-rules meta.directive.hledger-rules keyword.control.directive.hledger-rules
+#        ^ source.hledger-rules meta.directive.hledger-rules
+#         ^^^^^^^^^^^^^^^^ source.hledger-rules meta.directive.hledger-rules string.unquoted.value.hledger-rules
+>timezone UTC
+#^^^^^^^^ source.hledger-rules meta.directive.hledger-rules keyword.control.directive.hledger-rules
+#        ^ source.hledger-rules meta.directive.hledger-rules
+#         ^^^ source.hledger-rules meta.directive.hledger-rules string.unquoted.value.hledger-rules
+>date-format %Y-%m-%d
+#^^^^^^^^^^^ source.hledger-rules meta.directive.hledger-rules keyword.control.directive.hledger-rules
+#           ^ source.hledger-rules meta.directive.hledger-rules
+#            ^^^^^^^^ source.hledger-rules meta.directive.hledger-rules string.unquoted.value.hledger-rules
+>date-format %d/%m/%Y
+#^^^^^^^^^^^ source.hledger-rules meta.directive.hledger-rules keyword.control.directive.hledger-rules
+#           ^ source.hledger-rules meta.directive.hledger-rules
+#            ^^^^^^^^ source.hledger-rules meta.directive.hledger-rules string.unquoted.value.hledger-rules
+>
+>
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># SKIP DIRECTIVE
+#^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>skip
+#^^^^ source.hledger-rules meta.directive.skip.hledger-rules keyword.control.directive.skip.hledger-rules
+>skip 1
+#^^^^ source.hledger-rules meta.directive.skip.hledger-rules keyword.control.directive.skip.hledger-rules
+#    ^ source.hledger-rules meta.directive.skip.hledger-rules
+#     ^ source.hledger-rules meta.directive.skip.hledger-rules constant.numeric.integer.hledger-rules
+>skip 10
+#^^^^ source.hledger-rules meta.directive.skip.hledger-rules keyword.control.directive.skip.hledger-rules
+#    ^ source.hledger-rules meta.directive.skip.hledger-rules
+#     ^^ source.hledger-rules meta.directive.skip.hledger-rules constant.numeric.integer.hledger-rules
+>skip 999
+#^^^^ source.hledger-rules meta.directive.skip.hledger-rules keyword.control.directive.skip.hledger-rules
+#    ^ source.hledger-rules meta.directive.skip.hledger-rules
+#     ^^^ source.hledger-rules meta.directive.skip.hledger-rules constant.numeric.integer.hledger-rules
+>
+>
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># SEPARATOR DIRECTIVE (case-insensitive)
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>separator ,
+#^^^^^^^^^ source.hledger-rules meta.directive.separator.hledger-rules keyword.control.directive.separator.hledger-rules
+#         ^ source.hledger-rules meta.directive.separator.hledger-rules
+#          ^ source.hledger-rules meta.directive.separator.hledger-rules string.unquoted.value.hledger-rules
+>separator |
+#^^^^^^^^^ source.hledger-rules meta.directive.separator.hledger-rules keyword.control.directive.separator.hledger-rules
+#         ^ source.hledger-rules meta.directive.separator.hledger-rules
+#          ^ source.hledger-rules meta.directive.separator.hledger-rules string.unquoted.value.hledger-rules
+>separator tab
+#^^^^^^^^^ source.hledger-rules meta.directive.separator.hledger-rules keyword.control.directive.separator.hledger-rules
+#         ^ source.hledger-rules meta.directive.separator.hledger-rules
+#          ^^^ source.hledger-rules meta.directive.separator.hledger-rules string.unquoted.value.hledger-rules
+>separator space
+#^^^^^^^^^ source.hledger-rules meta.directive.separator.hledger-rules keyword.control.directive.separator.hledger-rules
+#         ^ source.hledger-rules meta.directive.separator.hledger-rules
+#          ^^^^^ source.hledger-rules meta.directive.separator.hledger-rules string.unquoted.value.hledger-rules
+>Separator ,
+#^^^^^^^^^ source.hledger-rules meta.directive.separator.hledger-rules keyword.control.directive.separator.hledger-rules
+#         ^ source.hledger-rules meta.directive.separator.hledger-rules
+#          ^ source.hledger-rules meta.directive.separator.hledger-rules string.unquoted.value.hledger-rules
+>SEPARATOR |
+#^^^^^^^^^ source.hledger-rules meta.directive.separator.hledger-rules keyword.control.directive.separator.hledger-rules
+#         ^ source.hledger-rules meta.directive.separator.hledger-rules
+#          ^ source.hledger-rules meta.directive.separator.hledger-rules string.unquoted.value.hledger-rules
+>
+>
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># DECIMAL-MARK DIRECTIVE
+#^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>decimal-mark .
+#^^^^^^^^^^^^ source.hledger-rules meta.directive.decimal-mark.hledger-rules keyword.control.directive.decimal-mark.hledger-rules
+#            ^ source.hledger-rules meta.directive.decimal-mark.hledger-rules
+#             ^ source.hledger-rules meta.directive.decimal-mark.hledger-rules string.unquoted.decimal-mark.value.hledger-rules
+>decimal-mark ,
+#^^^^^^^^^^^^ source.hledger-rules meta.directive.decimal-mark.hledger-rules keyword.control.directive.decimal-mark.hledger-rules
+#            ^ source.hledger-rules meta.directive.decimal-mark.hledger-rules
+#             ^ source.hledger-rules meta.directive.decimal-mark.hledger-rules string.unquoted.decimal-mark.value.hledger-rules
+>
+>
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># BALANCE-TYPE DIRECTIVE
+#^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>balance-type =
+#^^^^^^^^^^^^ source.hledger-rules meta.directive.balance-type.hledger-rules keyword.control.directive.balance-type.hledger-rules
+#            ^ source.hledger-rules meta.directive.balance-type.hledger-rules
+#             ^ source.hledger-rules meta.directive.balance-type.hledger-rules string.unquoted.balance-type.value.hledger-rules
+>balance-type ==
+#^^^^^^^^^^^^ source.hledger-rules meta.directive.balance-type.hledger-rules keyword.control.directive.balance-type.hledger-rules
+#            ^ source.hledger-rules meta.directive.balance-type.hledger-rules
+#             ^^ source.hledger-rules meta.directive.balance-type.hledger-rules string.unquoted.balance-type.value.hledger-rules
+>balance-type =*
+#^^^^^^^^^^^^ source.hledger-rules meta.directive.balance-type.hledger-rules keyword.control.directive.balance-type.hledger-rules
+#            ^ source.hledger-rules meta.directive.balance-type.hledger-rules
+#             ^^ source.hledger-rules meta.directive.balance-type.hledger-rules string.unquoted.balance-type.value.hledger-rules
+>balance-type ==*
+#^^^^^^^^^^^^ source.hledger-rules meta.directive.balance-type.hledger-rules keyword.control.directive.balance-type.hledger-rules
+#            ^ source.hledger-rules meta.directive.balance-type.hledger-rules
+#             ^^^ source.hledger-rules meta.directive.balance-type.hledger-rules string.unquoted.balance-type.value.hledger-rules
+>
+>
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># FIELDS DIRECTIVE
+#^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>fields date, description, amount
+#^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules keyword.control.directive.fields.hledger-rules
+#      ^ source.hledger-rules meta.directive.fields.hledger-rules
+#       ^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#           ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#            ^ source.hledger-rules meta.directive.fields.hledger-rules
+#             ^^^^^^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#                        ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                         ^ source.hledger-rules meta.directive.fields.hledger-rules
+#                          ^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+>fields date,description,amount
+#^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules keyword.control.directive.fields.hledger-rules
+#      ^ source.hledger-rules meta.directive.fields.hledger-rules
+#       ^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#           ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#            ^^^^^^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#                       ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                        ^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+>fields date, date2, status, code, description, comment, account1, account2
+#^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules keyword.control.directive.fields.hledger-rules
+#      ^ source.hledger-rules meta.directive.fields.hledger-rules
+#       ^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#           ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#            ^ source.hledger-rules meta.directive.fields.hledger-rules
+#             ^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#                  ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                   ^ source.hledger-rules meta.directive.fields.hledger-rules
+#                    ^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#                          ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                           ^ source.hledger-rules meta.directive.fields.hledger-rules
+#                            ^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#                                ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                                 ^ source.hledger-rules meta.directive.fields.hledger-rules
+#                                  ^^^^^^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#                                             ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                                              ^ source.hledger-rules meta.directive.fields.hledger-rules
+#                                               ^^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#                                                      ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                                                       ^ source.hledger-rules meta.directive.fields.hledger-rules
+#                                                        ^^^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#                                                                ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                                                                 ^ source.hledger-rules meta.directive.fields.hledger-rules
+#                                                                  ^^^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+>fields date, amount-in, amount-out, currency
+#^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules keyword.control.directive.fields.hledger-rules
+#      ^ source.hledger-rules meta.directive.fields.hledger-rules
+#       ^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#           ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#            ^ source.hledger-rules meta.directive.fields.hledger-rules
+#             ^^^^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#                      ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                       ^ source.hledger-rules meta.directive.fields.hledger-rules
+#                        ^^^^^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#                                  ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                                   ^ source.hledger-rules meta.directive.fields.hledger-rules
+#                                    ^^^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+>fields date1, date2, balance, balance1, balance2
+#^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules keyword.control.directive.fields.hledger-rules
+#      ^ source.hledger-rules meta.directive.fields.hledger-rules
+#       ^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.parameter.field-name.custom.hledger-rules
+#            ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#             ^ source.hledger-rules meta.directive.fields.hledger-rules
+#              ^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#                   ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                    ^ source.hledger-rules meta.directive.fields.hledger-rules
+#                     ^^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#                            ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                             ^ source.hledger-rules meta.directive.fields.hledger-rules
+#                              ^^^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#                                      ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                                       ^ source.hledger-rules meta.directive.fields.hledger-rules
+#                                        ^^^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+>fields date, custom-field, another_field, field3
+#^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules keyword.control.directive.fields.hledger-rules
+#      ^ source.hledger-rules meta.directive.fields.hledger-rules
+#       ^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.language.hledger-rules
+#           ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#            ^ source.hledger-rules meta.directive.fields.hledger-rules
+#             ^^^^^^^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.parameter.field-name.custom.hledger-rules
+#                         ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                          ^ source.hledger-rules meta.directive.fields.hledger-rules
+#                           ^^^^^^^^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.parameter.field-name.custom.hledger-rules
+#                                        ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                                         ^ source.hledger-rules meta.directive.fields.hledger-rules
+#                                          ^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.parameter.field-name.custom.hledger-rules
+>
+>
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># SOURCE DIRECTIVE
+#^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>source data.csv
+#^^^^^^ source.hledger-rules keyword.control.hledger-rules
+#      ^^^^^^^^^^ source.hledger-rules
+>source /absolute/path/to/data.csv
+#^^^^^^ source.hledger-rules keyword.control.hledger-rules
+#      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules
+>source relative/path/*.csv
+#^^^^^^ source.hledger-rules keyword.control.hledger-rules
+#      ^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules
+>source data*.csv
+#^^^^^^ source.hledger-rules keyword.control.hledger-rules
+#      ^^^^^^^^^^^ source.hledger-rules
+>source *.csv | sed 's/\r//g'
+#^^^^^^ source.hledger-rules keyword.control.hledger-rules
+#      ^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules
+>source file.csv | grep -v '^#' | cut -d',' -f1-5
+#^^^^^^ source.hledger-rules keyword.control.hledger-rules
+#      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules
+>
+>
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># FIELD ASSIGNMENT DIRECTIVES
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>
+># Date fields
+#^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>date %1
+#^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#    ^ source.hledger-rules meta.assignment.field.hledger-rules
+#     ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#      ^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>date2 %date
+#^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#     ^ source.hledger-rules meta.assignment.field.hledger-rules
+#      ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#       ^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>
+># Status and code
+#^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>status *
+#^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#      ^ source.hledger-rules meta.assignment.field.hledger-rules
+#       ^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>status %2
+#^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#      ^ source.hledger-rules meta.assignment.field.hledger-rules
+#       ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>code %3
+#^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#    ^ source.hledger-rules meta.assignment.field.hledger-rules
+#     ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#      ^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>
+># Description and comments
+#^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>description %description
+#^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#           ^ source.hledger-rules meta.assignment.field.hledger-rules
+#            ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#             ^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>description %4 %5
+#^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#           ^ source.hledger-rules meta.assignment.field.hledger-rules
+#            ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#             ^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#              ^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#               ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                ^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>comment %date - %description
+#^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#       ^ source.hledger-rules meta.assignment.field.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#         ^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+#             ^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                 ^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>comment1 First comment
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>comment2 Second comment: %amount
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                         ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                          ^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>comment9 Ninth comment
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>
+># Accounts
+#^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>account1 assets:bank:checking
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^^^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>account1 assets:%type
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                 ^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>account2 expenses:unknown
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>account2 expenses:%category
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                  ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                   ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>account10 liabilities:credit-card
+#^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#         ^ source.hledger-rules meta.assignment.field.hledger-rules
+#          ^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>
+># Amounts with match groups
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>amount %amount
+#^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#      ^ source.hledger-rules meta.assignment.field.hledger-rules
+#       ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#        ^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>amount -%amount
+#^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#      ^ source.hledger-rules meta.assignment.field.hledger-rules
+#       ^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#         ^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>amount USD %5
+#^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#      ^ source.hledger-rules meta.assignment.field.hledger-rules
+#       ^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#           ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#            ^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>amount-in %6
+#^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#         ^ source.hledger-rules meta.assignment.field.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#           ^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>amount-out %7
+#^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#            ^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>amount1 %amount
+#^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#       ^ source.hledger-rules meta.assignment.field.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#         ^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>amount2 %amount2
+#^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#       ^ source.hledger-rules meta.assignment.field.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#         ^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>amount9 %9
+#^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#       ^ source.hledger-rules meta.assignment.field.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#         ^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>
+># Currency
+#^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>currency USD
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>currency %currency
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#          ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>currency1 %3
+#^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#         ^ source.hledger-rules meta.assignment.field.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#           ^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>currency2 EUR
+#^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#         ^ source.hledger-rules meta.assignment.field.hledger-rules
+#          ^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>
+># Balance
+#^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>balance %balance
+#^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#       ^ source.hledger-rules meta.assignment.field.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#         ^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>balance1 %10
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#          ^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>balance2 %11
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#          ^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>balance9 %balance9
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#          ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># IF BLOCKS with various matcher patterns
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>
+># Simple pattern matching
+#^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if GROCERIES
+#^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#   ^^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>  account2 expenses:groceries
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>
+># Field reference matching
+#^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if %description AMAZON
+#^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#   ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#    ^^^^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.language.field-reference.custom.hledger-rules
+#               ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                ^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>  account2 expenses:online
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>
+># AND operator
+#^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if %description COFFEE && %amount -[0-9]+\.[0-9]{2}
+#^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#   ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#    ^^^^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.language.field-reference.custom.hledger-rules
+#               ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                ^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+#                      ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                       ^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.and.hledger-rules
+#                         ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                          ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                           ^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                                 ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                                  ^^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>  account2 expenses:coffee
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>  comment Negative amount detected
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#         ^ source.hledger-rules meta.assignment.field.hledger-rules
+#          ^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>
+># AND NOT operator
+#^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if %description TRANSFER && ! %description EXTERNAL
+#^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#   ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#    ^^^^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.language.field-reference.custom.hledger-rules
+#               ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                ^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+#                        ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                         ^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.and.hledger-rules
+#                           ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                            ^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.not.hledger-rules
+#                             ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                              ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                               ^^^^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                                          ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                                           ^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>  account2 assets:savings
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>  account1 assets:checking
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>
+># Multiple conditions
+#^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if %type DEBIT && ! %code ATM && %description ^(PURCHASE|SALE)
+#^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#   ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#    ^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#        ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#         ^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+#              ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#               ^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.and.hledger-rules
+#                 ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                  ^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.not.hledger-rules
+#                   ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                    ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                     ^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                         ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                          ^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+#                             ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                              ^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.and.hledger-rules
+#                                ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                                 ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                  ^^^^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                                             ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                                              ^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>  account2 expenses:misc
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>  comment %date
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#         ^ source.hledger-rules meta.assignment.field.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#           ^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>
+># Pattern with special regex
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if %description (RENT|MORTGAGE).*[0-9]+
+#^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#   ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#    ^^^^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.language.field-reference.custom.hledger-rules
+#               ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                ^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>  account2 expenses:housing
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>  amount \1
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.matchgroup.hledger-rules
+>
+>
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># IF TABLES - Comma separated
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if,account2,comment
+#^^ source.hledger-rules meta.conditional.table.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.table.hledger-rules
+#   ^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.hledger-rules
+#           ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#            ^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.hledger-rules
+>GROCERIES.*,expenses:groceries,Food shopping
+#^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.regexp.pattern.hledger-rules
+#           ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#            ^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                              ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                               ^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+>AMAZON.*,expenses:online,Online purchase
+#^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.regexp.pattern.hledger-rules
+#        ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#         ^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                        ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                         ^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+>COFFEE|CAFE,expenses:coffee,Coffee expense
+#^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.regexp.pattern.hledger-rules
+#           ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#            ^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                           ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                            ^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+>^ATM.*,expenses:cash,ATM withdrawal
+#^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.regexp.pattern.hledger-rules
+#      ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#       ^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                    ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                     ^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+># Comment in table
+#^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules comment.line.hledger-rules
+>SALARY,income:salary,Monthly salary
+#^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.regexp.pattern.hledger-rules
+#      ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#       ^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                    ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                     ^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+>; Another comment in table
+#^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules comment.line.hledger-rules
+>
+>
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># IF TABLES - Pipe separated
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if|account2|comment|amount-out
+#^^ source.hledger-rules meta.conditional.table.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.table.hledger-rules
+#   ^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.hledger-rules
+#           ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#            ^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.hledger-rules
+#                   ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                    ^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.hledger-rules
+>RENT.*|expenses:housing|Monthly rent|%amount
+#^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.regexp.pattern.hledger-rules
+#      ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#       ^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                       ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                        ^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                    ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                                     ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                      ^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.field-reference.custom.hledger-rules
+>ELECTRIC.*|expenses:utilities|Electricity||%amount
+#^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.regexp.pattern.hledger-rules
+#          ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#           ^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                             ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                              ^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                         ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                                          ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                                           ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                            ^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.field-reference.custom.hledger-rules
+>GAS.*|expenses:utilities|Gas bill|%amount
+#^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.regexp.pattern.hledger-rules
+#     ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#      ^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                        ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                         ^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                 ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                                  ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                   ^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.field-reference.custom.hledger-rules
+>WATER.*|expenses:utilities|Water bill|%amount
+#^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.regexp.pattern.hledger-rules
+#       ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#        ^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                          ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                           ^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                     ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                                      ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                       ^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.field-reference.custom.hledger-rules
+>* Comment in pipe table
+#^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules comment.line.hledger-rules
+>INSURANCE|expenses:insurance|Insurance premium|%amount
+#^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.regexp.pattern.hledger-rules
+#         ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#          ^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                            ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                             ^^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                              ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                                               ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                                ^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.field-reference.custom.hledger-rules
+>
+>
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># IF TABLES - Forward slash separated
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if/account2/description/amount
+#^^ source.hledger-rules meta.conditional.table.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.table.hledger-rules
+#   ^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.hledger-rules
+#           ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#            ^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.hledger-rules
+#                       ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                        ^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.hledger-rules
+>PAYCHECK.*/income:salary/Salary payment/-%amount
+#^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.regexp.pattern.hledger-rules
+#          ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#           ^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                        ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                         ^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                       ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                                        ^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                         ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                          ^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.field-reference.custom.hledger-rules
+>DIVIDEND.*/income:investments/Dividend income/-%amount
+#^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.regexp.pattern.hledger-rules
+#          ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#           ^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                             ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                              ^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                             ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                                              ^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                               ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                                ^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.field-reference.custom.hledger-rules
+>INTEREST.*/income:interest/Interest earned/-%amount
+#^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.regexp.pattern.hledger-rules
+#          ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#           ^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                          ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                           ^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                          ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                                           ^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                            ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                             ^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.field-reference.custom.hledger-rules
+>; Comment in slash table
+#^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules comment.line.hledger-rules
+>REFUND.*/income:refunds/Refund received/-%amount
+#^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.regexp.pattern.hledger-rules
+#        ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#         ^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                       ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                        ^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                       ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                                        ^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                         ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                          ^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.field-reference.custom.hledger-rules
+>
+>
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># TEMPLATE STRINGS with various substitutions
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>
+># Match group references
+#^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>description Transaction: \1 from \2
+#^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#           ^ source.hledger-rules meta.assignment.field.hledger-rules
+#            ^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                         ^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.matchgroup.hledger-rules
+#                           ^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                                 ^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.matchgroup.hledger-rules
+>comment Date: %date Amount: %amount Code: %code
+#^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#       ^ source.hledger-rules meta.assignment.field.hledger-rules
+#        ^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#              ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#               ^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                   ^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                            ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                             ^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                                   ^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                                          ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                           ^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>
+># Field references with different naming styles
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>account1 assets:%type:%subtype
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                 ^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#                     ^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                      ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                       ^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>account2 expenses:%category:%subcategory
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                  ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                   ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#                           ^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                            ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                             ^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>comment %custom-field and %another_field
+#^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#       ^ source.hledger-rules meta.assignment.field.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#         ^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#                     ^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                          ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                           ^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>
+># Mixed references
+#^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>description \1 - %description (\2)
+#^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#           ^ source.hledger-rules meta.assignment.field.hledger-rules
+#            ^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.matchgroup.hledger-rules
+#              ^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                 ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                  ^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                             ^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                               ^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.matchgroup.hledger-rules
+#                                 ^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>account2 expenses:%category:\1
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                  ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                   ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#                           ^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                            ^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.matchgroup.hledger-rules
+>
+># Built-in field references
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>comment date=%date date2=%date2 status=%status code=%code
+#^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#       ^ source.hledger-rules meta.assignment.field.hledger-rules
+#        ^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#             ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#              ^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                  ^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                         ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                          ^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                               ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                                       ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                        ^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                                              ^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                                                    ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                                     ^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>description desc=%description account1=%account1 account2=%account2
+#^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#           ^ source.hledger-rules meta.assignment.field.hledger-rules
+#            ^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                 ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                  ^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                             ^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                                       ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                        ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                                                ^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                                                          ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                                           ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>amount %amount-in or %amount-out in %currency
+#^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#      ^ source.hledger-rules meta.assignment.field.hledger-rules
+#       ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#        ^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                 ^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                     ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                      ^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                                ^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                                    ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                     ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>
+>
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># COMPLEX SCENARIOS
+#^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>
+># Nested conditions with multiple field refs
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if %type DEBIT && %description TRANSFER && ! %code EXTERNAL
+#^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#   ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#    ^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#        ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#         ^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+#              ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#               ^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.and.hledger-rules
+#                 ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                  ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                   ^^^^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                              ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                               ^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+#                                       ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                                        ^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.and.hledger-rules
+#                                          ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                                           ^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.not.hledger-rules
+#                                            ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                                             ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                              ^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                                                  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                                                   ^^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>  account1 assets:checking
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>  account2 assets:savings
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>  description Internal transfer on %date
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#             ^ source.hledger-rules meta.assignment.field.hledger-rules
+#              ^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                                   ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                    ^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>  comment From %account1 to %account2
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#         ^ source.hledger-rules meta.assignment.field.hledger-rules
+#          ^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#               ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                        ^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                            ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                             ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>
+># Table with template strings
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if,account2,description,comment
+#^^ source.hledger-rules meta.conditional.table.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.table.hledger-rules
+#   ^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.hledger-rules
+#           ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#            ^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.hledger-rules
+#                       ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                        ^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.hledger-rules
+>%merchant STORE.*,expenses:%category,Purchase at %merchant,Spent %amount on %date
+#^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+# ^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#         ^ source.hledger-rules meta.conditional.table.hledger-rules
+#          ^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.regexp.pattern.hledger-rules
+#                 ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                  ^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                           ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                            ^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#                                    ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                                     ^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                                 ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                                  ^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#                                                          ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                                                           ^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                                                 ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                                                  ^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.field-reference.custom.hledger-rules
+#                                                                        ^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                                                            ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                                                             ^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.field-reference.custom.hledger-rules
+>%vendor SERVICE,expenses:services,%vendor service,Service fee: %amount
+#^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+# ^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#       ^ source.hledger-rules meta.conditional.table.hledger-rules
+#        ^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.regexp.pattern.hledger-rules
+#               ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                ^^^^^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                 ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                                  ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                   ^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#                                         ^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                                 ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.separator.comma.hledger-rules
+#                                                  ^^^^^^^^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules string.unquoted.value.hledger-rules
+#                                                               ^ source.hledger-rules meta.conditional.table.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                                                ^^^^^^ source.hledger-rules meta.conditional.table.hledger-rules variable.language.field-reference.custom.hledger-rules
+>
+>
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># EDGE CASES
+#^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+># ============================================
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>
+># Empty lines in if block
+#^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if PATTERN
+#^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#   ^^^^^^^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>
+>  account2 expenses:test
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>
+># Multiple ANDs
+#^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>if %1 A && %2 B && %3 C
+#^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.control.directive.if.hledger-rules
+#  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#   ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#    ^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#     ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#      ^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+#       ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#        ^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.and.hledger-rules
+#          ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#           ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#            ^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#             ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#              ^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+#               ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                ^^ source.hledger-rules meta.conditional.if-block.hledger-rules keyword.operator.logical.and.hledger-rules
+#                  ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                   ^ source.hledger-rules meta.conditional.if-block.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                    ^ source.hledger-rules meta.conditional.if-block.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#                     ^ source.hledger-rules meta.conditional.if-block.hledger-rules
+#                      ^ source.hledger-rules meta.conditional.if-block.hledger-rules string.regexp.pattern.hledger-rules
+>  account2 test
+#^^ source.hledger-rules meta.assignment.field.hledger-rules
+#  ^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>
+># Field names with numbers
+#^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>account9 test
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>amount99 %amount
+#^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#        ^ source.hledger-rules meta.assignment.field.hledger-rules
+#         ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#          ^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>balance999 %balance
+#^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#          ^ source.hledger-rules meta.assignment.field.hledger-rules
+#           ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#            ^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-reference.custom.hledger-rules
+>comment99 test
+#^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#         ^ source.hledger-rules meta.assignment.field.hledger-rules
+#          ^^^^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+>
+># Custom field names in various positions
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.hledger-rules comment.line.hledger-rules
+>fields custom_field_1, another-field-2, field3
+#^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules keyword.control.directive.fields.hledger-rules
+#      ^ source.hledger-rules meta.directive.fields.hledger-rules
+#       ^^^^^^^^^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.parameter.field-name.custom.hledger-rules
+#                     ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                      ^ source.hledger-rules meta.directive.fields.hledger-rules
+#                       ^^^^^^^^^^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.parameter.field-name.custom.hledger-rules
+#                                      ^ source.hledger-rules meta.directive.fields.hledger-rules punctuation.separator.comma.hledger-rules
+#                                       ^ source.hledger-rules meta.directive.fields.hledger-rules
+#                                        ^^^^^^ source.hledger-rules meta.directive.fields.hledger-rules variable.parameter.field-name.custom.hledger-rules
+>description %custom_field_1 %another-field-2 %field3
+#^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.language.field-name.hledger-rules
+#           ^ source.hledger-rules meta.assignment.field.hledger-rules
+#            ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#             ^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#                           ^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                            ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                             ^^^^^^^^^^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+#                                            ^ source.hledger-rules meta.assignment.field.hledger-rules string.unquoted.value.hledger-rules
+#                                             ^ source.hledger-rules meta.assignment.field.hledger-rules punctuation.definition.template-expression.begin.hledger-rules
+#                                              ^^^^^^ source.hledger-rules meta.assignment.field.hledger-rules variable.parameter.field-reference.custom.hledger-rules
+>

@@ -1,32 +1,490 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "hledger rules",
+	"scopeName": "source.hledger-rules",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#comments"
 		},
 		{
-			"include": "#strings"
+			"include": "#conditional-table-comma"
+		},
+		{
+			"include": "#conditional-table-pipe"
+		},
+		{
+			"include": "#conditional-table-forward-slash"
+		},
+		{
+			"include": "#if-block"
+		},
+		{
+			"include": "#skip-directive"
+		},
+		{
+			"include": "#separator-directive"
+		},
+		{
+			"include": "#decimal-mark-directive"
+		},
+		{
+			"include": "#balance-type-directive"
+		},
+		{
+			"include": "#simple-value-directives"
+		},
+		{
+			"include": "#fields-directive"
+		},
+		{
+			"include": "#source-directive"
+		},
+		{
+			"include": "#field-assignment-directive"
+		},
+		{
+			"include": "#keywords"
 		}
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.hledger-rules",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+		"comments": {
+			"name": "comment.line.hledger-rules",
+			"match": "^\\s*[#;*].*$"
 		},
-		"strings": {
-			"name": "string.quoted.double.hledger-rules",
-			"begin": "\"",
-			"end": "\"",
+		"assignment-keywords": {
+			"name": "variable.language.hledger-rules",
+			"match": "\\b(date2?|status|code|description|comment\\d*|account\\d+|amount\\d*(?:-in|-out)?|currency\\d*|balance\\d*)\\b"
+		},
+		"simple-value-directives": {
+			"name": "meta.directive.hledger-rules",
+			"match": "^\\s*(include|encoding|timezone|date-format)\\s+(\\S+)\\s*$",
+			"captures": {
+				"1": {
+					"name": "keyword.control.directive.hledger-rules"
+				},
+				"2": {
+					"name": "string.unquoted.value.hledger-rules"
+				}
+			}
+		},
+		"skip-directive": {
+			"name": "meta.directive.skip.hledger-rules",
+			"match": "^\\s*(skip)\\s+(\\d+)?\\s*$",
+			"captures": {
+				"1": {
+					"name": "keyword.control.directive.skip.hledger-rules"
+				},
+				"2": {
+					"name": "constant.numeric.integer.hledger-rules"
+				}
+			}
+		},
+		"separator-directive": {
+			"name": "meta.directive.separator.hledger-rules",
+			"match": "(?i)^\\s*(separator)\\s+(TAB|SPACE|.)\\s*$",
+			"captures": {
+				"1": {
+					"name": "keyword.control.directive.separator.hledger-rules"
+				},
+				"2": {
+					"name": "string.unquoted.value.hledger-rules"
+				}
+			}
+		},
+		"fields-directive": {
+			"name": "meta.directive.fields.hledger-rules",
+			"begin": "^\\s*(fields)\\s+",
+			"end": "(?=$|[#;])",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.directive.fields.hledger-rules"
+				}
+			},
 			"patterns": [
 				{
-					"name": "constant.character.escape.hledger-rules",
-					"match": "\\\\."
+					"name": "punctuation.separator.comma.hledger-rules",
+					"match": ","
+				},
+				{
+					"include": "#assignment-keywords"
+				},
+				{
+					"name": "variable.parameter.field-name.custom.hledger-rules",
+					"match": "[^,\\s]+"
+				}
+			]
+		},
+		"source-directive": {
+			"name": "meta.directive.source.hledger-rules",
+			"begin": "^\\s*(source)\\s+([^\\s|]+)?",
+			"end": "$",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.directive.source.hledger-rules"
+				},
+				"2": {
+					"name": "string.unquoted.filepath.hledger-rules",
+					"patterns": [
+						{
+							"name": "variable.language.special.wildcard.hledger-rules",
+							"match": "\\*"
+						}
+					]
+				}
+			},
+			"patterns": [
+				{
+					"begin": "\\|",
+					"end": "$",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.separator.pipe.hledger-rules"
+						}
+					},
+					"patterns": [
+						{
+							"include": "source.shell"
+						}
+					]
+				}
+			]
+		},
+		"reference": {
+			"patterns": [
+				{
+					"name": "variable.language.field-reference.custom.hledger-rules",
+					"match": "(date2?|status|code|description|comment\\d*|account\\d+|amount\\d*(?:-in|-out)?|currency\\d*|balance\\d*)"
+				},
+				{
+					"name": "variable.parameter.field-reference.custom.hledger-rules",
+					"match": "\\w[\\w-]*"
+				}
+			]
+		},
+		"matcher-expression": {
+			"patterns": [
+				{
+					"match": "(&&)",
+					"captures": {
+						"1": {
+							"name": "keyword.operator.logical.and.hledger-rules"
+						}
+					}
+				},
+				{
+					"match": "\\s*(!)?\\s*(%)(\\w[\\w-]*)",
+					"captures": {
+						"1": {
+							"name": "keyword.operator.logical.not.hledger-rules"
+						},
+						"2": {
+							"name": "punctuation.definition.template-expression.begin.hledger-rules"
+						},
+						"3": {
+							"patterns": [
+								{
+									"include": "#reference"
+								}
+							]
+						}
+					}
+				},
+				{
+					"match": "\\s*([^&%]*[^&%\\s])",
+					"captures": {
+						"1": {
+							"name": "string.regexp.pattern.hledger-rules"
+						}
+					}
+				},
+				{
+					"match": "([&%])",
+					"captures": {
+						"1": {
+							"name": "string.regexp.pattern.hledger-rules"
+						}
+					}
+				}
+			]
+		},
+		"template-string": {
+			"patterns": [
+				{
+					"name": "variable.parameter.matchgroup.hledger-rules",
+					"match": "\\\\\\d+"
+				},
+				{
+					"match": "(%)(\\w[\\w-]*)",
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.template-expression.begin.hledger-rules"
+						},
+						"2": {
+							"patterns": [
+								{
+									"include": "#reference"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "string.unquoted.value.hledger-rules",
+					"match": "[^%\\\\]+(?=[%\\\\])|[^%\\\\]*[^%\\\\\\s]"
+				}
+			]
+		},
+		"decimal-mark-directive": {
+			"name": "meta.directive.decimal-mark.hledger-rules",
+			"match": "^\\s*(decimal-mark)\\s+([.,])\\s*$",
+			"captures": {
+				"1": {
+					"name": "keyword.control.directive.decimal-mark.hledger-rules"
+				},
+				"2": {
+					"name": "string.unquoted.decimal-mark.value.hledger-rules"
+				}
+			}
+		},
+		"balance-type-directive": {
+			"name": "meta.directive.balance-type.hledger-rules",
+			"match": "^\\s*(balance-type)\\s+(={1,2}\\*?)\\s*$",
+			"captures": {
+				"1": {
+					"name": "keyword.control.directive.balance-type.hledger-rules"
+				},
+				"2": {
+					"name": "string.unquoted.balance-type.value.hledger-rules"
+				}
+			}
+		},
+		"conditional-table-comma": {
+			"name": "meta.conditional.table.hledger-rules",
+			"begin": "^\\s*(if)(,)(.*)$",
+			"end": "(?=^\\s*$)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.directive.if.hledger-rules"
+				},
+				"2": {
+					"name": "punctuation.separator.table.hledger-rules"
+				},
+				"3": {
+					"patterns": [
+						{
+							"name": "punctuation.separator.comma.hledger-rules",
+							"match": ","
+						},
+						{
+							"include": "#assignment-keywords"
+						}
+					]
+				}
+			},
+			"patterns": [
+				{
+					"include": "#comments"
+				},
+				{
+					"begin": "([^,]*)(?=,)",
+					"end": "$",
+					"beginCaptures": {
+						"1": {
+							"patterns": [
+								{
+									"include": "#matcher-expression"
+								}
+							]
+						}
+					},
+					"patterns": [
+						{
+							"name": "punctuation.separator.comma.hledger-rules",
+							"match": ","
+						},
+						{
+							"match": "([^,]+)",
+							"captures": {
+								"1": {
+									"patterns": [
+										{
+											"include": "#template-string"
+										}
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		},
+		"conditional-table-pipe": {
+			"name": "meta.conditional.table.hledger-rules",
+			"begin": "^\\s*(if)(\\|)(.*)$",
+			"end": "(?=^\\s*$)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.directive.if.hledger-rules"
+				},
+				"2": {
+					"name": "punctuation.separator.table.hledger-rules"
+				},
+				"3": {
+					"patterns": [
+						{
+							"name": "punctuation.separator.comma.hledger-rules",
+							"match": "\\|"
+						},
+						{
+							"include": "#assignment-keywords"
+						}
+					]
+				}
+			},
+			"patterns": [
+				{
+					"include": "#comments"
+				},
+				{
+					"begin": "([^|]*)(?=\\|)",
+					"end": "$",
+					"beginCaptures": {
+						"1": {
+							"patterns": [
+								{
+									"include": "#matcher-expression"
+								}
+							]
+						}
+					},
+					"patterns": [
+						{
+							"name": "punctuation.separator.comma.hledger-rules",
+							"match": "\\|"
+						},
+						{
+							"match": "([^|]+)",
+							"captures": {
+								"1": {
+									"patterns": [
+										{
+											"include": "#template-string"
+										}
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		},
+		"conditional-table-forward-slash": {
+			"name": "meta.conditional.table.hledger-rules",
+			"begin": "^\\s*(if)(/)(.*)$",
+			"end": "(?=^\\s*$)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.directive.if.hledger-rules"
+				},
+				"2": {
+					"name": "punctuation.separator.table.hledger-rules"
+				},
+				"3": {
+					"patterns": [
+						{
+							"name": "punctuation.separator.comma.hledger-rules",
+							"match": "/"
+						},
+						{
+							"include": "#assignment-keywords"
+						}
+					]
+				}
+			},
+			"patterns": [
+				{
+					"include": "#comments"
+				},
+				{
+					"begin": "([^/]*)(?=/)",
+					"end": "$",
+					"beginCaptures": {
+						"1": {
+							"patterns": [
+								{
+									"include": "#matcher-expression"
+								}
+							]
+						}
+					},
+					"patterns": [
+						{
+							"name": "punctuation.separator.comma.hledger-rules",
+							"match": "/"
+						},
+						{
+							"match": "([^/]+)",
+							"captures": {
+								"1": {
+									"patterns": [
+										{
+											"include": "#template-string"
+										}
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		},
+		"if-block": {
+			"name": "meta.conditional.if-block.hledger-rules",
+			"begin": "^\\s*(if)\\s+(.*)\\s*$",
+			"end": "(?=^\\s*$)|(?=^\\s+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.directive.if.hledger-rules"
+				},
+				"2": {
+					"patterns": [
+						{
+							"include": "#matcher-expression"
+						}
+					]
+				}
+			},
+			"patterns": [
+				{
+					"include": "#comments"
+				},
+				{
+					"include": "#matcher-expression"
+				}
+			]
+		},
+		"field-assignment-directive": {
+			"name": "meta.assignment.field.hledger-rules",
+			"begin": "^\\s*(date2?|status|code|description|comment\\d*|account\\d+|amount\\d*(?:-in|-out)?|currency\\d*|balance\\d*)\\s+",
+			"end": "$",
+			"beginCaptures": {
+				"1": {
+					"name": "variable.language.field-name.hledger-rules"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#template-string"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.hledger-rules",
+					"match": "\\b(include|encoding|timezone|date-format|separator|decimal-mark|balance-type|newest-first|intra-day-reversed|archive|skip|fields|source|if|end)\\b"
 				}
 			]
 		}
-	},
-	"scopeName": "source.rules"
+	}
 }

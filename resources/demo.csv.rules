@@ -1,0 +1,44 @@
+# Comment
+; Comment
+
+# Directives:
+include other.rules
+fields date, type, amount, code
+source filename*.csv | sed 's/\r//g'
+archive
+encoding iso-8859-1
+separator ,
+skip 10
+date-format YYYY-MM-DD
+timezone America/New_York
+newest-first
+intra-day-reversed
+decimal-mark .
+balance-type ==*
+
+# `if` blocks:
+if 
+%type TYPE PATTERN && ! %description DESC PATTERN
+%type ANOTHER TYPE PATTERN && %code CODE PATTERN
+  amount -%amount
+
+# `if` tables (only `,` `|`, `/` supported):
+if,account2,comment
+MATCHER1,ACCOUNT2 VALUE,COMMENT VALUE
+MATCHER2,ACCOUNT2 VALUE2,COMMENT VALUE2
+; comment
+MATCHER3,ACCOUNT2 VALUE3,COMMENT VALUE3
+
+if|account2|comment
+MATCHER1|ACCOUNT2 VALUE|COMMENT VALUE
+MATCHER2|ACCOUNT2 VALUE2|COMMENT VALUE2
+; comment
+MATCHER3|ACCOUNT2 VALUE3|COMMENT VALUE3
+
+if/account2/comment
+MATCHER1/ACCOUNT2 VALUE/COMMENT VALUE
+MATCHER2/ACCOUNT2 VALUE2/COMMENT VALUE2
+; comment
+MATCHER3/ACCOUNT2 VALUE3/COMMENT VALUE3
+
+account1 assets:%type:%code
