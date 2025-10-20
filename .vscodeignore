@@ -1,4 +1,14 @@
 .vscode/**
 .vscode-test/**
 .gitignore
+.gitattributes
 vsc-extension-quickstart.md
+src/**
+tsconfig.json
+eslint.config.mjs
+node_modules/**
+!node_modules/vscode-*/**
+test/**
+*.vsix
+*.md
+resources/**

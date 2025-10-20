@@ -20,9 +20,13 @@
   "categories": [
     "Programming Languages"
   ],
+  "main": "./out/extension.js",
   "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
     "test:update": "vscode-tmgrammar-snap --updateSnapshot --scope \"source.hledger-rules\" --grammar ./syntaxes/hledger-rules.tmLanguage.json ./test/test.csv.rules",
-    "test": "vscode-tmgrammar-snap ./test/*.rules"
+    "test": "vscode-tmgrammar-snap ./test/test.csv.rules"
   },
   "contributes": {
     "languages": [
