@@ -10,5 +10,4 @@ node_modules/**
 !node_modules/vscode-*/**
 test/**
 *.vsix
-*.md
-resources/**
+resources/demo/**

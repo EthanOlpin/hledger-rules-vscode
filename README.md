@@ -5,12 +5,12 @@ Language support for
 
 ## Features
 ### Syntax highlighting:
-![syntax highlighting for hledger rules](resources/syntax-highlighting.png)
+![syntax highlighting for hledger rules](resources/demo/syntax-highlighting.png)
 
 ### Completions:
-![completion suggestions for custom fields](resources/custom-field-completion.png)
-![completion suggestions for directives](resources/directive-completion.png)
-![completion suggestions for date-format](resources/date-format-completions.png)
+![completion suggestions for custom fields](resources/demo/custom-field-completion.png)
+![completion suggestions for directives](resources/demo/directive-completion.png)
+![completion suggestions for date-format](resources/demo/date-format-completions.png)
 ## Planned Features
 - [x] Syntax highlighting
   - [ ] POSIX-extended regular expression highlighting
