@@ -26,8 +26,10 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "test:update": "vscode-tmgrammar-snap --updateSnapshot --scope \"source.hledger-rules\" --grammar ./syntaxes/hledger-rules.tmLanguage.json ./test/test.csv.rules",
-    "test": "vscode-tmgrammar-snap ./test/test.csv.rules"
+    "pretest": "npm run compile",
+    "test": "vscode-test",
+    "test:grammar:update": "vscode-tmgrammar-snap --updateSnapshot --scope \"source.hledger-rules\" --grammar ./syntaxes/hledger-rules.tmLanguage.json ./test/test.csv.rules",
+    "test:grammar": "vscode-tmgrammar-snap ./test/test.csv.rules"
   },
   "contributes": {
     "languages": [
@@ -57,6 +59,10 @@
     "@types/node": "22.x",
     "@types/vscode": "^1.80.0",
     "@typescript-eslint/eslint-plugin": "^8.45.0",
-    "@typescript-eslint/parser": "^8.45.0"
+    "@typescript-eslint/parser": "^8.45.0",
+    "@types/mocha": "^10.0.10",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "mocha": "^11.7.4"
   }
 }

@@ -11,3 +11,4 @@ node_modules/**
 test/**
 *.vsix
 resources/demo/**
+**/*.js.map
