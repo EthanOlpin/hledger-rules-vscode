@@ -13,3 +13,9 @@
 
 ### Added
 - auto-completion suggestions for varios fields and directives
+
+## [0.2.2] - 2025-10-22
+- added icon
+
+## [0.2.3] - 2025-10-23
+- reduced required vscode version to v1.80.0
