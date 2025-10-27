@@ -27,9 +27,9 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile",
-    "test": "vscode-test",
     "test:grammar:update": "vscode-tmgrammar-snap --updateSnapshot --scope \"source.hledger-rules\" --grammar ./syntaxes/hledger-rules.tmLanguage.json ./test/test.csv.rules",
     "test:grammar": "vscode-tmgrammar-snap ./test/test.csv.rules",
+    "test": "vscode-test && npm run test:grammar",
     "deploy": "vsce publish"
   },
   "contributes": {
