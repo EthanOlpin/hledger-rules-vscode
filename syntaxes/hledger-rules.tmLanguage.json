@@ -206,7 +206,12 @@
 					"match": "\\s*([^&%]*[^&%\\s])",
 					"captures": {
 						"1": {
-							"name": "string.regexp.pattern.hledger-rules"
+							"name": "meta.regex.pattern.hledger-rules",
+							"patterns": [
+								{
+									"include": "#regex-pattern"
+								}
+							]
 						}
 					}
 				},
@@ -214,9 +219,146 @@
 					"match": "([&%])",
 					"captures": {
 						"1": {
-							"name": "string.regexp.pattern.hledger-rules"
+							"name": "meta.regex.pattern.hledger-rules",
+							"patterns": [
+								{
+									"include": "#regex-pattern"
+								}
+							]
 						}
 					}
+				}
+			]
+		},
+		"regex-pattern": {
+			"patterns": [
+				{
+					"include": "#regex-anchors"
+				},
+				{
+					"include": "#regex-alternation"
+				},
+				{
+					"include": "#regex-escape"
+				},
+				{
+					"include": "#regex-grouping"
+				},
+				{
+					"include": "#regex-quantifiers"
+				},
+				{
+					"include": "#regex-bracket"
+				},
+				{
+					"include": "#regex-wildcard"
+				},
+				{
+					"include": "#regex-literal"
+				}
+			]
+		},
+		"regex-anchors": {
+			"patterns": [
+				{
+					"name": "keyword.control.anchor.regexp.hledger-rules",
+					"match": "\\^|\\$|\\\\b|\\\\B|\\\\<|\\\\>|\\\\`|\\\\'"
+				}
+			]
+		},
+		"regex-alternation": {
+			"patterns": [
+				{
+					"name": "keyword.operator.or.regexp.hledger-rules",
+					"match": "\\|"
+				}
+			]
+		},
+		"regex-escape": {
+			"patterns": [
+				{
+					"name": "constant.character.escape.regexp.hledger-rules",
+					"match": "\\\\[\\[\\]\\\\(){}+*?|.^$]"
+				}
+			]
+		},
+		"regex-grouping": {
+			"patterns": [
+				{
+					"name": "meta.group.regex.hledger-rules",
+					"begin": "\\(",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.group.regexp.hledger-rules"
+						}
+					},
+					"end": "\\)",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.group.regexp.hledger-rules"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#regex-pattern"
+						}
+					]
+				}
+			]
+		},
+		"regex-quantifiers": {
+			"patterns": [
+				{
+					"name": "keyword.operator.quantifier.regexp.hledger-rules",
+					"match": "(?:\\*|\\+|\\?|\\{\\s*\\d+\\s*(?:,\\s*\\d*)?\\s*\\})"
+				}
+			]
+		},
+		"regex-bracket": {
+			"patterns": [
+				{
+					"name": "constant.other.character-class.set.regexp.hledger-rules",
+					"begin": "(\\[)(\\^)?",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.character-class.regexp.hledger-rules"
+						},
+						"2": {
+							"name": "keyword.operator.negation.regexp.hledger-rules"
+						}
+					},
+					"end": "(?<!\\[)(\\])",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.definition.character-class.regexp.hledger-rules"
+						}
+					},
+					"patterns": [
+						{
+							"name": "constant.language.regexp.hledger-rules",
+							"match": "\\[:(?:alnum|digit|punct|alpha|graph|space|blank|lower|upper|cntrl|print|xdigit|word):\\]"
+						},
+						{
+							"name": "constant.character.character-class.range.regexp.hledger-rules",
+							"match": ".-."
+						}
+					]
+				}
+			]
+		},
+		"regex-wildcard": {
+			"patterns": [
+				{
+					"name": "constant.other.character-class.regexp.hledger-rules",
+					"match": "\\."
+				}
+			]
+		},
+		"regex-literal": {
+			"patterns": [
+				{
+					"name": "string.regexp.literal.hledger-rules",
+					"match": "[^\\[().*+?{|\\\\^$]+"
 				}
 			]
 		},

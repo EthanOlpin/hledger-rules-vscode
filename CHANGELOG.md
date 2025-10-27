@@ -15,7 +15,16 @@
 - auto-completion suggestions for varios fields and directives
 
 ## [0.2.2] - 2025-10-22
+
+### Added
 - added icon
 
-## [0.2.3] - 2025-10-23
+## [0.2.3] - 2025-10-22
+
+### Changed
 - reduced required vscode version to v1.80.0
+
+## [0.3.0] - 2025-10-25
+
+### Added
+- syntax highlighting for POSIX-extended regular expressions in `if` conditions

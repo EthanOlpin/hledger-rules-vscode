@@ -294,3 +294,7 @@ comment99 test
 # Custom field names in various positions
 fields custom_field_1, another-field-2, field3
 description %custom_field_1 %another-field-2 %field3
+
+# Regex edge cases
+if %1 ([]){1,}]) && ^([a-z.+*?]+|[[:digit:]]{2,4}).([^[:space:]"']{0,10}|$[\[\]\\-]{1,}$)?$
+  comment regex edge cases

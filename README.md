@@ -13,7 +13,7 @@ Language support for
 ![completion suggestions for date-format](resources/demo/date-format-completions.png)
 ## Planned Features
 - [x] Syntax highlighting
-  - [ ] POSIX-extended regular expression highlighting
+  - [x] POSIX-extended regular expression highlighting
 - [x] Completions
 - [ ] Snippets
 - [ ] Linting
